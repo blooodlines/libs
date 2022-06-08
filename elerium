@@ -1,5 +1,5 @@
 local ui_options = {
-	main_color = Color3.fromRGB(0, 5, 0),  --191, 86, 127 --150, 100, 255
+	main_color = Color3.fromRGB(224, 176, 240),  -- (150, 100, 255)
 	min_size = Vector2.new(400, 365),
 	toggle_key = Enum.KeyCode.RightShift,
 	can_resize = true,
