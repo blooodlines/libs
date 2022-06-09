@@ -335,7 +335,7 @@ Dropdown.Position = UDim2.new(-0.055555556, 0, 0.0833333284, 0)
 Dropdown.Size = UDim2.new(0, 200, 0, 20)
 Dropdown.ZIndex = 2
 Dropdown.Font = Enum.Font.GothamBold
-Dropdown.Text = "      Dropdown"
+Dropdown.Text = "Dropdown"
 Dropdown.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
 Dropdown.TextSize = 14
 Dropdown.TextXAlignment = Enum.TextXAlignment.Left
@@ -427,7 +427,7 @@ Button.BorderSizePixel = 0
 Button.Size = UDim2.new(1, 0, 0, 20)
 Button.ZIndex = 2
 Button.Font = Enum.Font.GothamSemibold
-Button.Text = "      Folder"
+Button.Text = "Folder"
 Button.TextColor3 = Color3.new(1, 1, 1)
 Button.TextSize = 14
 Button.TextXAlignment = Enum.TextXAlignment.Left
@@ -747,7 +747,7 @@ DropdownButton.BorderSizePixel = 0
 DropdownButton.Size = UDim2.new(1, 0, 0, 20)
 DropdownButton.ZIndex = 3
 DropdownButton.Font = Enum.Font.GothamBold
-DropdownButton.Text = "      Button"
+DropdownButton.Text = "Button"
 DropdownButton.TextColor3 = Color3.new(0.784314, 0.784314, 0.784314)
 DropdownButton.TextSize = 14
 DropdownButton.TextXAlignment = Enum.TextXAlignment.Left
@@ -804,12 +804,8 @@ Windows.BackgroundTransparency = 1
 Windows.Position = UDim2.new(0, 20, 0, 20)
 Windows.Size = UDim2.new(1, 20, 1, -20)
 
---[[ Script ]]--
-if script.Parent then
+--[[ Script ]] -- Need fix
 script.Parent = imgui
-else
-script.Parent = imgui
-end
 
 local UIS = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
