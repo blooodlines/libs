@@ -11,7 +11,7 @@ imgui.Parent = game:GetService("CoreGui")
 
 do
 	local imgui = game:GetService("CoreGui"):FindFirstChild("imgui")
-	if imgui and not nil then imgui:Destroy()
+        imgui:Destroy()
     end
 end
 
@@ -88,7 +88,7 @@ local Input_Roundify_4px = Instance.new("ImageLabel")
 local Windows = Instance.new("Frame")
 
 Prefabs.Name = "Prefabs"
-Prefabs.Parent = imgui
+Prefabs.Parent = imgui or newimgui
 Prefabs.BackgroundColor3 = Color3.new(1, 1, 1)
 Prefabs.Size = UDim2.new(0, 100, 0, 100)
 Prefabs.Visible = false
@@ -810,9 +810,9 @@ if not imgui then
 end
 
 --if script.Parent and imgui and not nil then
-    script.Parent = imgui
+    script.Parent = imgui or newgui
 --else
-    script.Parent = imgui or newimgui
+   -- script.Parent = imgui or newimgui
 --end
 
 local UIS = game:GetService("UserInputService")
