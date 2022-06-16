@@ -809,11 +809,11 @@ if not imgui then
     newimgui.Parent = game:GetService("CoreGui")
 end
 
-if script.Parent and imgui and not nil then
+--if script.Parent and imgui and not nil then
     script.Parent = imgui
-else
-    script.Parent = newimgui
-end
+--else
+    script.Parent = imgui or newimgui
+--end
 
 local UIS = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
