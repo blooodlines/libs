@@ -5,12 +5,12 @@ local ui_options = {
 	can_resize = true,
 }
 
-local imgui = Instance.new("ScreenGui")
+local CoreGui = game:GetService("CoreGui")
+local imgui = Instance.new("ScreenGui", CoreGui)
 imgui.Name = "imgui"
-imgui.Parent = game:GetService("CoreGui")
 
 do
-	local imgui = game:GetService("CoreGui"):FindFirstChild("imgui")
+	local imgui = CoreGui:FindFirstChild("imgui")
         imgui:Destroy()
     end
 end
@@ -88,7 +88,7 @@ local Input_Roundify_4px = Instance.new("ImageLabel")
 local Windows = Instance.new("Frame")
 
 Prefabs.Name = "Prefabs"
-Prefabs.Parent = imgui or newimgui
+Prefabs.Parent = imgui
 Prefabs.BackgroundColor3 = Color3.new(1, 1, 1)
 Prefabs.Size = UDim2.new(0, 100, 0, 100)
 Prefabs.Visible = false
@@ -803,17 +803,7 @@ Windows.BackgroundTransparency = 1
 Windows.Position = UDim2.new(0, 20, 0, 20)
 Windows.Size = UDim2.new(1, 20, 1, -20)
 
-if not imgui then
-    local newimgui = Instance.new("ScreenGui")
-    newimgui.Name = "imgui"
-    newimgui.Parent = game:GetService("CoreGui")
-end
-
---if script.Parent and imgui and not nil then
-    script.Parent = imgui or newgui
---else
-   -- script.Parent = imgui or newimgui
---end
+script.Parent = imgui
 
 local UIS = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
