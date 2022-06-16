@@ -5,16 +5,14 @@ local ui_options = {
 	can_resize = true,
 }
 
-local CoreGui = game:GetService("CoreGui")
-local imgui = Instance.new("ScreenGui", CoreGui)
-imgui.Name = "imgui"
-
 do
-	local imgui = CoreGui:FindFirstChild("imgui")
-        imgui:Destroy()
+	local imgui = game:GetService("CoreGui"):FindFirstChild("imgui")
+	if imgui then task.wait(0.5)
+	imgui:Destroy()
     end
 end
 
+local imgui = Instance.new("ScreenGui")
 local Prefabs = Instance.new("Frame")
 local Label = Instance.new("TextLabel")
 local Window = Instance.new("ImageLabel")
@@ -86,6 +84,9 @@ local Title_4 = Instance.new("TextLabel")
 local Input = Instance.new("TextButton")
 local Input_Roundify_4px = Instance.new("ImageLabel")
 local Windows = Instance.new("Frame")
+
+imgui.Name = "imgui"
+imgui.Parent = game:GetService("CoreGui")
 
 Prefabs.Name = "Prefabs"
 Prefabs.Parent = imgui
@@ -803,6 +804,7 @@ Windows.BackgroundTransparency = 1
 Windows.Position = UDim2.new(0, 20, 0, 20)
 Windows.Size = UDim2.new(1, 20, 1, -20)
 
+--[[ Script ]] -- Need fix
 script.Parent = imgui
 
 local UIS = game:GetService("UserInputService")
