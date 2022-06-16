@@ -782,11 +782,13 @@ do
 			active = not active
 			self:updateToggle(toggle, nil, active)
 			
+		pcall(function()
 			if callback then
 				callback(active, function(...)
 					self:updateToggle(toggle, ...)
 				end)
 			end
+			end)
 		end)
 		
 		return toggle
