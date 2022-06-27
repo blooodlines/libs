@@ -6,9 +6,9 @@ local ui_options = {
 }
 
 do
-	local imgui = gethui():FindFirstChild("imgui")
-	if imgui then 
-	imgui.Parent = nil
+	  local imgui = game:GetService("CoreGui"):FindFirstChild("imgui")
+	  if imgui then 
+	  imgui.Parent = nil
     end
 end
 
@@ -86,7 +86,12 @@ local Input_Roundify_4px = Instance.new("ImageLabel")
 local Windows = Instance.new("Frame")
 
 imgui.Name = "imgui"
-imgui.Parent = gethui()
+
+if gethui() then
+   imgui.Parent = gethui()
+else
+   imgui.Parent = game:GetService("CoreGui")
+end
 
 Prefabs.Name = "Prefabs"
 Prefabs.Parent = imgui
