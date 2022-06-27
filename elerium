@@ -9,6 +9,7 @@ do
 	  local imgui = game:GetService("CoreGui"):FindFirstChild("imgui") -- gethui():FindFirstChild("imgui")
 	  if imgui then 
 	  imgui.Parent = nil
+	end
     end
 end
 
