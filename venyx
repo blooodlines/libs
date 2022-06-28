@@ -1,17 +1,14 @@
--- init
+
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 
--- services
 local input = game:GetService("UserInputService")
 local run = game:GetService("RunService")
 local tween = game:GetService("TweenService")
 local tweeninfo = TweenInfo.new
 
--- additional
 local utility = {}
 
--- themes
 local objects = {}
 local themes = {
 	Background = Color3.fromRGB(24, 24, 24), 
@@ -159,7 +156,6 @@ do
 	
 		parent = parent or frame
 		
-		-- stolen from wally or kiriot, kek
 		local dragging = false
 		local dragInput, mousePos, framePos
 
@@ -198,8 +194,6 @@ do
 	
 end
 
--- classes
-
 local library = {} -- main
 local page = {}
 local section = {}
@@ -214,7 +208,7 @@ do
 	function library.new(title)
 		local container = utility:Create("ScreenGui", {
 			Name = title,
-			Parent = game.CoreGui
+			Parent = gethui()
 		}, {
 			utility:Create("ImageLabel", {
 				Name = "Main",
