@@ -6,9 +6,13 @@ local ui_options = {
 }
 
 do
-	local imgui = game:GetService("CoreGui"):FindFirstChild("imgui")
-	if imgui then 
-	imgui.Parent = nil
+if gethui then
+	  local imgui = gethui():FindFirstChild("imgui")
+else
+	  local imgui = game:GetService("CoreGui"):FindFirstChild("imgui")
+   if imgui then 
+	     imgui.Parent = nil
+	  end
    end
 end
 
@@ -86,7 +90,13 @@ local Input_Roundify_4px = Instance.new("ImageLabel")
 local Windows = Instance.new("Frame")
 
 imgui.Name = "imgui"
-imgui.Parent = game:GetService("CoreGui")
+
+if gethui then
+	imgui.Parent = gethui()
+    print("Your exploit support gethui()")
+else
+	imgui.Parent = game:GetService("CoreGui")
+end
 
 Prefabs.Name = "Prefabs"
 Prefabs.Parent = imgui
